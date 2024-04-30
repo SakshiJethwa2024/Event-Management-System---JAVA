@@ -1,8 +1,8 @@
 # Event-Management-System---JAVA
 
-Here it is the Java-GUI project developed with technologies : 
+#Here it is the Java-GUI project developed with technologies : 
 
-# Core Java Concepts
+ - Core Java Concepts
  - OOPS
  - Java Swing 
  - Java AWT
