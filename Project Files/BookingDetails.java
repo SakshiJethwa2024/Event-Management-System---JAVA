@@ -1,12 +1,15 @@
+package mainfront;
 
+import food.FoodChoice;
+import music1.BookMusic;
+import photographyp.PhotographyAmount;
+import venue.VenueChoice;
 
 public class BookingDetails {
 	static VenueChoice v;
 	static BookMusic bm;
 	static PhotographyAmount pa;
 	static FoodChoice fc;
-	static DecorStorage dcs;
-	
 	public static void venueadd(VenueChoice v1) {
 		v=v1;
 	}
@@ -19,9 +22,4 @@ public class BookingDetails {
 	public static void foodadd(FoodChoice f) {
 		fc=f;
 	}
-	public static void decoradd(DecorStorage ds)
-	{
-		dcs=ds;
-	}
 }
-

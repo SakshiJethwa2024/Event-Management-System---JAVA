@@ -1,3 +1,4 @@
+package photographyp;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -19,20 +20,19 @@ public class EventListnerPhotography implements ActionListener,ItemListener{
 			if(ae.getActionCommand().equals("Confirm")) {
 				 pp.amount=lp.returnamount();
 			if(pp.amount==0) {
-				JOptionPane.showMessageDialog(pp, "You have not Selected any package...Please select any one");
+				JOptionPane.showConfirmDialog(pp, "you have not selected package...Do you want to continue?");
 			}
 			else {
-			int t=JOptionPane.showConfirmDialog(pp, "Your amount is "+pp.amount+"/- Confirm it??");
+			int t=JOptionPane.showConfirmDialog(pp, "your amount is "+pp.amount+" Confirm it!!");
 			if(t==0) {
-			    pa=new PhotographyAmount(pp.amount);
-			    JOptionPane.showMessageDialog(pp,"YOUR BOOKING FOR PHOTOGRAPHY SUCCESSFULLY COMPLETED \n WITH TOTAL AMOUNT OF RS."+pp.amount+"/-");
+			pa=new PhotographyAmount(pp.amount);
 			}
 			}
 			}
 			
 			if(ae.getActionCommand().equals("View current price")) {
 				 pp.amount=lp.returnamount();
-				JOptionPane.showMessageDialog(pp, "Current Amount : "+pp.amount+"/-");
+				JOptionPane.showMessageDialog(pp, "current amount : "+pp.amount);
 			}
 			
 			

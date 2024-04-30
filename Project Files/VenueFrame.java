@@ -1,3 +1,4 @@
+package venue;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -27,11 +28,11 @@ public class VenueFrame extends JPanel {
 		//this.setBackground(new Color(0,0,0,10));
 		this.setBackground(Color.white);	
 		AddVenue av=new AddVenue();
-		vp1=new VenuePanel(av.v1,20,10);
+		vp1=new VenuePanel(av.v1,50,10);
 		this.add(vp1);
-		vp2=new VenuePanel(av.v2,20,190);
+		vp2=new VenuePanel(av.v2,50,250);
 		this.add(vp2);
-		vp3=new VenuePanel(av.v3,20,370);
+		vp3=new VenuePanel(av.v3,50,480);
 		this.add(vp3);
 		//vp1=new VenuePanel(av.v1,50,10);
 		//this.add(vp1);
@@ -48,4 +49,3 @@ public class VenueFrame extends JPanel {
 	}
 	
 }
-

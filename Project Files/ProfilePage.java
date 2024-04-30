@@ -1,24 +1,11 @@
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Image;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-
-class Profile extends JFrame implements ActionListener
-{
+class Profile extends JFrame implements ActionListener {
     JTextField originalName;
     JTextField emailId;
     JTextField contactNumber;
@@ -27,45 +14,17 @@ class Profile extends JFrame implements ActionListener
     JLabel warningLabel;
     JButton updateButton;
     JButton editButton;
-    String user;
-    String contact="",email="",password1="",name="";
-    String upname="",upuser="",uppass="",upemail="",upcontact="";
     Font font1 = new Font("Arial Rounded MT BOLD",Font.PLAIN,17);
     Font font2 = new Font("Arial Rounded MT BOLD",Font.PLAIN,20);
     Font font3 = new Font("Arial Rounded MT BOLD",Font.ITALIC,17);
     Color creamColor = new Color(246, 238, 219);
     Color greenColor = new Color(14,94,119);
 
-    Profile(String s,String user)
-    {
-    	super(s);
-        this.user = user;
-    
-    	try
-		{
-			Class.forName("com.mysql.jdbc.Driver");
-			System.out.print("\n DRIVER CONNECTED ");
-			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/tvm_user","root","");
-			
-			System.out.print("\n DATABASE CONNECTED ");
-			
-			Statement st = con.createStatement();
-			
-			ResultSet rs = st.executeQuery("select name,password,email,contact from userinfo where username='"+user+"'");
-			
-			if(rs.next())
-			{
-				name = rs.getString("name");
-				password1 = rs.getString("password");
-				contact = rs.getString("contact");
-				email = rs.getString("email");
-			}
-			rs.close();
-    
-//        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    Profile(){
+        super("Profile Page");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600,600);
-        setLocation(350,50);
+        setLocation(400,200);
 
         JLabel headingLabel = new JLabel("MY PROFILE",JLabel.CENTER);
         headingLabel.setOpaque(true);
@@ -85,7 +44,7 @@ class Profile extends JFrame implements ActionListener
         originalLabel.setForeground(greenColor);
         originalLabel.setBounds(50,50,200,40);
 
-        originalName = new JTextField(name);
+        originalName = new JTextField("Original Name");
         originalName.setBounds(200,50,300,40);
         originalName.setBackground(creamColor);
         originalName.setBorder(BorderFactory.createLineBorder(greenColor,2));
@@ -100,7 +59,7 @@ class Profile extends JFrame implements ActionListener
         userLabel.setForeground(greenColor);
         userLabel.setBounds(50,110,200,40);
 
-        username = new JTextField(user);
+        username = new JTextField("username");
         username.setBounds(200,110,300,40);
         username.setBackground(creamColor);
         username.setBorder(BorderFactory.createLineBorder(greenColor,2));
@@ -114,7 +73,7 @@ class Profile extends JFrame implements ActionListener
         passwordLabel.setForeground(greenColor);
         passwordLabel.setBounds(50,170,200,40);
 
-        password = new JTextField(password1);
+        password = new JTextField("password@123");
         password.setBounds(200,170,300,40);
         password.setBackground(creamColor);
         password.setBorder(BorderFactory.createLineBorder(greenColor,2));
@@ -128,7 +87,7 @@ class Profile extends JFrame implements ActionListener
         emailLabel.setForeground(greenColor);
         emailLabel.setBounds(50,230,200,40);
 
-        emailId = new JTextField(email);
+        emailId = new JTextField("xyz@gmail.com");
         emailId.setBounds(200,230,300,40);
         emailId.setBackground(creamColor);
         emailId.setBorder(BorderFactory.createLineBorder(greenColor,2));
@@ -142,7 +101,7 @@ class Profile extends JFrame implements ActionListener
         contactLabel.setForeground(greenColor);
         contactLabel.setBounds(50,290,200,40);
 
-        contactNumber = new JTextField(contact);
+        contactNumber = new JTextField("9909090909");
         contactNumber.setBounds(200,290,300,40);
         contactNumber.setBackground(creamColor);
         contactNumber.setBorder(BorderFactory.createLineBorder(greenColor,2));
@@ -163,7 +122,6 @@ class Profile extends JFrame implements ActionListener
         updateButton = new JButton("Update");
         updateButton.setBorder(BorderFactory.createRaisedSoftBevelBorder());
         updateButton.setFocusable(false);
-        updateButton.setEnabled(false);
         updateButton.setForeground(creamColor);
         updateButton.setBackground(greenColor);
         updateButton.setFont(font1);
@@ -202,16 +160,10 @@ class Profile extends JFrame implements ActionListener
         add(background);
         setResizable(false);
         setVisible(true);
-		}
-    	catch(Exception exp)
-    	{
-    		System.out.println("ERROR : "+exp.getMessage());
-        }
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) 
-    {
+    public void actionPerformed(ActionEvent e) {
         if(e.getSource()== editButton){
             originalName.setEditable(true);
             username.setEditable(true);
@@ -228,8 +180,6 @@ class Profile extends JFrame implements ActionListener
             emailId.setForeground(greenColor);
             contactNumber.setFont(font1);
             contactNumber.setForeground(greenColor);
-           
-            updateButton.setEnabled(true);
         }
         if(e.getSource() == updateButton){
             originalName.setFont(font3);
@@ -242,52 +192,21 @@ class Profile extends JFrame implements ActionListener
             emailId.setForeground(new Color(4, 53, 68, 150));
             contactNumber.setFont(font3);
             contactNumber.setForeground(new Color(4, 53, 68, 150));
-            
-            try
-            {
-            	Class.forName("com.mysql.jdbc.Driver");
-    			System.out.print("\n DRIVER CONNECTED ");
-    			
-    			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/tvm_user","root","");
-    			
-    			System.out.print("\n DATABASE CONNECTED ");
-    			
-    			Statement st = con.createStatement();
-    			
-    			upname = originalName.getText();
-    			upuser = username.getText();
-    			uppass = password.getText();
-    			upemail = emailId.getText();
-    			upcontact = contactNumber.getText();
-    			
-    			String query = "update userinfo set name='"+upname+"',username='"+upuser+"',password='"+uppass+"',confirm_pass='"+uppass+"',email='"+upemail+"',contact='"+upcontact+"' where username='"+user+"'";
-    			
-    			st.executeUpdate(query);
-    			
-    			JOptionPane.showMessageDialog(null,"YOUR DATA HAS BEEN UPDATED !!");
-            }
-            catch(Exception exp)
-            {
-            	System.out.println("ERROR : "+exp.getMessage());
-            }
-            
             originalName.setEditable(false);
             username.setEditable(false);
             password.setEditable(false);
             emailId.setEditable(false);
             contactNumber.setEditable(false);
-            
-            
-            Start start = new Start("THE VELVET MOMENTS",upuser);
-            start.setVisible(true);
             dispose();
         }
     }
 }
 
-public class ProfilePage
-{
+public class ProfilePage {
+    ProfilePage(){
+        Profile myProfile = new Profile();
+    }
     public static void main(String[] args) {
-        Profile myProfile = new Profile("THE VELVET MOMENTS","Sakshi");
+        Profile myProfile = new Profile();
     }
 }

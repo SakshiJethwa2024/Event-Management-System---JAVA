@@ -1,3 +1,4 @@
+package food;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -36,7 +37,7 @@ class FrontEndforMainCourse extends JPanel{
 		this.setBounds(200, 100, 900, 700);
 		//this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		//this.setVisible(true);
-		this.setBackground(new Color(207,236,207));
+		this.setBackground(new Color(255,255,204));
 		 
 		this.setLayout(null);
 		
@@ -65,13 +66,13 @@ class FrontEndforMainCourse extends JPanel{
 		
 		jp1=new JPanel();
 		jp1.setBackground(Color.white);
-		jp1.setBounds(20,190,420,230);
+		jp1.setBounds(20,220,420,270);
 		this.add(jp1);
 		jp1.setLayout(null);
 		
 		jp2=new JPanel();
 		jp2.setBackground(Color.white);
-		jp2.setBounds(450,190,420,230);
+		jp2.setBounds(450,220,420,270);
 		this.add(jp2);
 		jp2.setLayout(null);
 		
@@ -239,9 +240,7 @@ class FrontEndforMainCourse extends JPanel{
 						
 						confirm=new JButton("Confirm");
 						confirm.setFont(new Font("Arial",Font.BOLD,15));
-						confirm.setBounds(680,60,130,40);
-						confirm.setBackground(Color.white);
-						confirm.setForeground(Color.black);
+						confirm.setBounds(680,500,100,40);
 						this.add(confirm);
 						confirm.setEnabled(false);
 						confirm.addActionListener(mcl);

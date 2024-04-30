@@ -1,3 +1,4 @@
+package venue;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -16,9 +17,9 @@ public class VenuePanel extends JPanel {
 		
 		VenuePanel(Venue v,int m,int n){
 			this.setLayout(null);
-			this.setBounds(m,n,900,170);
+			this.setBounds(m,n,900,200);
 			this.setVisible(true);
-		    this.setBackground(new Color(191,213,232));
+		    this.setBackground(new Color(255,102,102,20));
 			
 			this.setBorder(BorderFactory.createLineBorder(Color.black, 2, isVisible()));
 			//this.currentlyselected=v;
@@ -33,12 +34,12 @@ public class VenuePanel extends JPanel {
 			this.add(title);
 			
 			info=new JTextArea();
-			info.setText("\n Ratings "+v.ratings+"/5                                      "+"Contact no. "+v.contactno+"\n Details "+v.extrainfo);
+			info.setText("\n Ratings "+v.ratings+"/5                                      "+"Contact no. "+v.contactno+"\n\n  Details "+v.extrainfo);
 			info.setEditable(false);
-			info.setBounds(2, 90, 700, 75);
+			info.setBounds(2, 90, 700, 100);
 			info.setForeground(Color.black);
 			info.setFont(new Font("Berlin Sans FB",Font.PLAIN,20));
-			info.setBackground(new Color(253,222,238));
+			info.setBackground(new Color(255,51,51,20));
 			//info.setBackground(Color.white);
 			this.add(info);
 			

@@ -1,16 +1,17 @@
+package photographyp;
 public class LogicPhotography {
 	Photography1 pp;
 	LogicPhotography(Photography1 p1){
 		this.pp=p1;
 	}
-	public double returnamount() {
+	public long returnamount() {
 		pp.amount=0;
 		if(pp.r.isSelected()) {
 			if(pp.c1.isSelected()) {
 				pp.amount+=10000;
 			}
 			if(pp.c2.isSelected()) {
-				pp.amount+=10000;
+				pp.amount+=1000;
 			}
 		}
 		else if(pp.r1.isSelected()){

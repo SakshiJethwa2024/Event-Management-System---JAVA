@@ -1,4 +1,6 @@
+package venue;
 
+import mainfront.BookingDetails;
 
 public class VenueChoice {
 	public String name,timeduration;
@@ -8,7 +10,6 @@ public class VenueChoice {
 		this.timeduration=timeduration;
 		this.price=pricefullday;
 		BookingDetails.venueadd(this);
-		//System.out.print(""+name+","+timeduration+","+price);
+		System.out.print(""+name+","+timeduration+","+price);
 	}
 }
-

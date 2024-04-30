@@ -1,22 +1,9 @@
-import java.awt.Color;
-import java.awt.Font;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-
-class Start extends JFrame implements ActionListener,ItemListener
-{
+class Start extends JFrame implements ActionListener {
     JPanel heading;
     JPanel userProfile;
     JPanel workPlace;
@@ -26,228 +13,189 @@ class Start extends JFrame implements ActionListener,ItemListener
     JButton bookEventButton;
     JButton notificationButton;
     JButton helpButton;
-    String user;
-    JLabel username,edate;
-    JTextField ufield;
-    JComboBox date,month,year;
-	int n = 1;
-	String s,d,y,eventdate="DATE NOT SELECTED";
 
     Font font1 = new Font("Arial Rounded MT BOLD",Font.BOLD,30);
     Font font2 = new Font("Arial Rounded MT BOLD",Font.PLAIN,20);
     Font font3 = new Font("Arial Rounded MT BOLD",Font.ITALIC,20);
-   
-    Start(String s,String user)
-    {
-        super(s);
-        this.user = user;
+    Color creamColor = new Color(246, 238, 219);
+    Color greenColor = new Color(14,94,119);
+    Start(){
+        super("Start Page");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setExtendedState(MAXIMIZED_BOTH);
-        setLayout(null);
-        setContentPane(new JLabel(new ImageIcon("images//mainbg.jpg")));
-        
-        heading = new JPanel();
-        heading.setBounds(0,0,1400,140);
-        add(heading);
-        JLabel pic = new JLabel(new ImageIcon("images//tvm3re3.png"));
-		heading.add(pic);
+        setLayout(new BorderLayout());
 
-        
-        username = new JLabel("USERNAME       : ");
-        username.setBounds(330,170,250,40);
-        username.setForeground(Color.black);
-        username.setFont(font1);
-        add(username);
-        
-        ufield = new JTextField(user);
-        ufield.setBounds(650,170,200,40);
-        ufield.setFont(font1);
-        ufield.setEditable(false);
-        add(ufield);
+//        ImageIcon imageIcon = new ImageIcon("Logo.png");
+//        Image image = imageIcon.getImage();
+//        Image temp = image.getScaledInstance(100,100,Image.SCALE_SMOOTH);
+//        imageIcon = new ImageIcon(temp);
+//        JLabel eventLogo = new JLabel("",imageIcon,JLabel.CENTER);
+        JLabel eventLogo = new JLabel("");
+//        eventLogo.setBorder(BorderFactory.createLineBorder(creamColor));
+        eventLogo.setPreferredSize(new Dimension(100,100));
+
+        logoutButton = new JButton("Logout");
+        logoutButton.setBounds(210,70,150,50);
+        logoutButton.setFocusable(false);
+        logoutButton.setFont(font2);
+        logoutButton.setBackground(creamColor);
+        logoutButton.setForeground(greenColor);
+        logoutButton.setBorder(BorderFactory.createRaisedSoftBevelBorder());
+        logoutButton.addActionListener(this);
+
+        profileButton = new JButton("Profile");
+        profileButton.setBounds(40,70,150,50);
+        profileButton.setFocusable(false);
+        profileButton.setFont(font2);
+        profileButton.setBackground(creamColor);
+        profileButton.setForeground(greenColor);
+        profileButton.setBorder(BorderFactory.createRaisedSoftBevelBorder());
+        profileButton.addActionListener(this);
+
+        JLabel buttonLabel = new JLabel("");
+//        buttonLabel.setBorder(BorderFactory.createLineBorder(creamColor));
+        buttonLabel.setPreferredSize(new Dimension(400,100));
+        buttonLabel.add(profileButton);
+        buttonLabel.add(logoutButton);
+
+        JLabel eventName = new JLabel("THE VELVET MOMENTS");
+        eventName.setFont(font1);
+        eventName.setForeground(creamColor);
+
+
+        heading = new JPanel();
+        heading.setPreferredSize(new Dimension(0,200));
+        heading.setBackground(new Color(4, 53, 68, 223));
+        heading.setLayout(new BorderLayout());
+        heading.add(eventLogo,BorderLayout.WEST);
+        heading.add(eventName,BorderLayout.CENTER);
+        heading.add(buttonLabel,BorderLayout.EAST);
+
+//        JLabel welcomeLabel = new JLabel("Let's start your dream plans with us.",JLabel.CENTER);
+//        welcomeLabel.setBounds(0,150,400,50);
+//        welcomeLabel.setFont(font2);
+//        welcomeLabel.setForeground(creamColor);
+//
+//        JLabel userLabel = new JLabel("MAHESWARI PANDA",JLabel.CENTER);
+//        userLabel.setBounds(0,200,400,50);
+//        userLabel.setFont(font2);
+//        userLabel.setForeground(creamColor);
+//
+//        JLabel nameLabel = new JLabel("BOOK EVENT",JLabel.CENTER);
+//        nameLabel.setBounds(0,350,400,50);
+//        nameLabel.setFont(font2);
+//        nameLabel.setForeground(creamColor);
+//
+//        JLabel emailLabel = new JLabel("BOOKING HISTORY",JLabel.CENTER);
+//        emailLabel.setBounds(0,400,400,50);
+//        emailLabel.setFont(font2);
+//        emailLabel.setForeground(creamColor);
+//
+//        JLabel contactLabel = new JLabel("NOTIFICATIONS",JLabel.CENTER);
+//        contactLabel.setBounds(0,450,400,50);
+//        contactLabel.setFont(font2);
+//        contactLabel.setForeground(creamColor);
+//
+//        JLabel helpLabel = new JLabel("CONNECT US",JLabel.CENTER);
+//        helpLabel.setBounds(0,500,400,50);
+//        helpLabel.setFont(font2);
+//        helpLabel.setForeground(creamColor);
+
+//        userProfile = new JPanel();
+//        userProfile.setBorder(BorderFactory.createLineBorder(creamColor));
+//        userProfile.setPreferredSize(new Dimension(400,0));
+//        userProfile.setBackground(greenColor);
+//        userProfile.setLayout(null);
+//        userProfile.add(welcomeLabel);
+//        userProfile.add(userLabel);
+//        userProfile.add(nameLabel);
+//        userProfile.add(emailLabel);
+//        userProfile.add(contactLabel);
+//        userProfile.add(helpLabel);
+
+        ImageIcon backgroundImage = new ImageIcon("Background.jpeg");
+        Image image = backgroundImage.getImage();
+        Image temp = image.getScaledInstance(1600,900,Image.SCALE_SMOOTH);
+        backgroundImage = new ImageIcon(temp);
 
         JPanel optionPanel = new JPanel();
-        optionPanel.setBackground(new Color(4, 53, 68, 83));
-        optionPanel.setBounds(500,250,700,350);
-        optionPanel.setLayout(null);
+        optionPanel.setBackground(new Color(4, 53, 68, 223));
+        optionPanel.setBounds(480,320,700,500);
+        optionPanel.setLayout(new FlowLayout(FlowLayout.CENTER,30,20));
 
-        bookEventButton = new JButton("BOOK AN EVENT");
-        bookEventButton.setBounds(20,20,320,310);
-        bookEventButton.setBackground(Color.white);
-        bookEventButton.setForeground(Color.black);
+        bookEventButton = new JButton("BOOK EVENT");
+        bookEventButton.setPreferredSize(new Dimension(300,220));
+        bookEventButton.setBackground(creamColor);
+        bookEventButton.setForeground(greenColor);
         bookEventButton.setFont(font2);
         bookEventButton.setFocusable(false);
         bookEventButton.setBorder(BorderFactory.createRaisedSoftBevelBorder());
 
-        /*bookingHistoryButton = new JButton("BOOKING HISTORY");
-        bookingHistoryButton.setBounds(360,20,320,140);
-        bookingHistoryButton.setBackground(Color.white);
-        bookingHistoryButton.setForeground(Color.black);
+        bookingHistoryButton = new JButton("BOOKING HISTORY");
+        bookingHistoryButton.setPreferredSize(new Dimension(300,220));
+        bookingHistoryButton.setBackground(creamColor);
+        bookingHistoryButton.setForeground(greenColor);
         bookingHistoryButton.setFont(font2);
         bookingHistoryButton.setFocusable(false);
         bookingHistoryButton.setBorder(BorderFactory.createRaisedSoftBevelBorder());
 
 
         notificationButton = new JButton("NOTIFICATIONS");
-        notificationButton.setBounds(20,190,320,140);
-        notificationButton.setBackground(Color.white);
-        notificationButton.setForeground(Color.black);
+        notificationButton.setPreferredSize(new Dimension(300,220));
+        notificationButton.setBackground(creamColor);
+        notificationButton.setForeground(greenColor);
         notificationButton.setFont(font2);
         notificationButton.setFocusable(false);
-        notificationButton.setBorder(BorderFactory.createRaisedSoftBevelBorder());*/
+        notificationButton.setBorder(BorderFactory.createRaisedSoftBevelBorder());
 
 
         helpButton = new JButton("HELP DESK");
-        helpButton.setBounds(360,20,320,310);
-        helpButton.setBackground(Color.white);
-        helpButton.setForeground(Color.black);
+        helpButton.setPreferredSize(new Dimension(300,220));
+        helpButton.setBackground(creamColor);
+        helpButton.setForeground(greenColor);
         helpButton.setFont(font2);
         helpButton.setFocusable(false);
         helpButton.setBorder(BorderFactory.createRaisedSoftBevelBorder());
 
 
-        add(optionPanel);
+
         optionPanel.add(bookEventButton);
-       /* optionPanel.add(bookingHistoryButton);
-        optionPanel.add(notificationButton);*/
-       optionPanel.add(helpButton);
-        
-        
-        logoutButton = new JButton("Logout");
-        logoutButton.setBounds(1140,170,100,50);
-        logoutButton.setFocusable(false);
-        logoutButton.setFont(font2);
-        logoutButton.setBackground(Color.white);
-        logoutButton.setForeground(Color.black);
-        logoutButton.setBorder(BorderFactory.createRaisedSoftBevelBorder());
-        add(logoutButton);
-        logoutButton.addActionListener(this);
+        optionPanel.add(bookingHistoryButton);
+        optionPanel.add(notificationButton);
+        optionPanel.add(helpButton);
 
-        profileButton = new JButton("Profile");
-        profileButton.setBounds(1000,170,100,50);
-        profileButton.setFocusable(false);
-        profileButton.setFont(font2);
-        profileButton.setBackground(Color.white);
-        profileButton.setForeground(Color.black);
-        profileButton.setBorder(BorderFactory.createRaisedSoftBevelBorder());
-        add(profileButton);
-        profileButton.addActionListener(this);
-        
-        bookEventButton.addActionListener(this);
-//        bookingHistoryButton.addActionListener(this);
-//        notificationButton.addActionListener(this);
-        helpButton.addActionListener(this);
-        
-        
-        
-        
-        
-        edate = new JLabel("SELECT EVENT DATE :");
-        
-        date = new JComboBox();
-		month = new JComboBox();
-		year = new JComboBox();
-		
-		edate.setFont(font2);
-		edate.setForeground(Color.black);
-		edate.setBounds(20,288,300,30);
-		add(edate);
-		
-		month.setBounds(20,330,110,25);
-		month.setFont(font2);
-		date.setBounds(160,330,100,25);
-		date.setFont(font2);
-		year.setBounds(290,330,150,25);
-		year.setFont(font2);
-		
-		date.addItem("DATE"); 
-		month.addItem("MONTH"); month.addItem("Jan"); month.addItem("Feb"); month.addItem("Mar");
-		month.addItem("Apr");  month.addItem("May");  month.addItem("June");  month.addItem("July"); month.addItem("Aug");
-		month.addItem("Sept"); month.addItem("Oct"); month.addItem("Nov");  month.addItem("Dec");
-		year.addItem("YEAR"); year.addItem("2023");
-		month.addItemListener(this);
-		date.addItemListener(this);
-		year.addItemListener(this);
-		
-		
-		
-				
-		add(date); add(month); add(year);
+        JLabel workplaceBackgroundLabel = new JLabel("",backgroundImage,JLabel.CENTER);
+        workplaceBackgroundLabel.add(optionPanel,JLabel.CENTER);
 
+        workPlace = new JPanel();
+        workPlace.setPreferredSize(new Dimension(1600,900));
+        workPlace.add(workplaceBackgroundLabel);
+
+//        add(userProfile,BorderLayout.WEST);
+        add(heading,BorderLayout.NORTH);
+        add(workPlace,BorderLayout.SOUTH);
+
+        setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == profileButton)
-        {
-        	setVisible(true);
-           Profile profilePage = new Profile("THE VELVET MOMENTS",user);
-//           setVisible(true);
+        if(e.getSource() == profileButton){
+            ProfilePage profilePage = new ProfilePage();
         }
-        else if (e.getSource() == logoutButton)
-        {
-           setVisible(false);
-           Home h1 = new Home("THE VELVET MOMENTS");
-           h1.setVisible(true);
-        }
-        if(e.getSource() == bookEventButton)
-        {
-        	setVisible(false);
-        	TryPage tp = new TryPage("THE VELVET MOMENTS",user,eventdate);
-        }
-        
-        if(e.getSource() == helpButton)
-        {
-        	JOptionPane.showMessageDialog(null,"YOU CAN CONTACT US FOR ANY QUERIES RELATED TO BOOKINGS\nNOTE : FOR CANCEL A BOOKING YOU MUST HAVE TO INFORM US AT LEAST BEFORE 2 DAYS OF THE SELECTED DATE\n\nYOU CAN CONTACT US BY THE FOLLOWING INFORMATION\n\nEMAIL : tvmsupport@gmmail.com\nHELP : 9090909090\n\n\nWE ARE ALWAYS THERE FOR YOUR DREAMS","HELP DESK",JOptionPane.INFORMATION_MESSAGE);
+        if (e.getSource() == logoutButton){
+            dispose();
+            NewPage newPage = new NewPage();
         }
     }
-    
-    public void itemStateChanged(ItemEvent ie) {
-		if(ie.getSource() == month)
-		{
-			s = month.getSelectedItem().toString();
-			if(s.equals("Jan") || s.equals("Mar") || s.equals("May") || s.equals("July") || s.equals("Aug") || s.equals("Oct") || s.equals("Dec"))
-			{
-				while(n != 32)
-				{
-					date.addItem(n);
-					n++;
-				}
-			}
-			else if(s.equals("Apr") || s.equals("June") || s.equals("Sept") || s.equals("Nov"))
-			{
-				while(n != 31)
-				{
-					date.addItem(n);
-					n++;
-				}
-			}
-			else
-			{
-				while(n != 30)
-				{
-					date.addItem(n);
-					n++;
-				}
-			}
-		}
-		if(ie.getSource() == date)
-		{
-			d = date.getSelectedItem().toString();
-		}
-		if(ie.getSource() == year)
-		{
-			y = year.getSelectedItem().toString();
-		}
-		
-		eventdate = s+" "+d+" , "+y;
-	}
 }
 
-/*public class StartPage
-{
-    public static void main(String[] args) 
-    {
-        Start start = new Start("THE VELVET MOMENTS","SAKSHI");
-        start.setVisible(true);
+public class StartPage {
+    StartPage(){
+        Start start = new Start();
     }
-}*/
+
+    public static void main(String[] args) {
+        Start start = new Start();
+    }
+}

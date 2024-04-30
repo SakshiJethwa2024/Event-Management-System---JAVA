@@ -1,3 +1,5 @@
+package food;
+
 import java.util.HashMap;
 import java.util.Set;
 
@@ -22,3 +24,4 @@ public class HashMapFile {
         return "YOUR SELECTED FOOD ITEMS ARE : \n" + newStr;
     }
 }
+

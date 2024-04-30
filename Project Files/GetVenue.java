@@ -1,3 +1,4 @@
+package venue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -7,7 +8,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
-//import TryPage;
+import mainfront.TryPage;
 
 
 
@@ -42,7 +43,7 @@ public class GetVenue implements ActionListener{
 			 }
 			 
 			 dv.dispose();
-			TryPage.show("YOUR SELECTED VENUE IS : "+ dv.currentlyselected.name);
+			TryPage.show("your venue is : "+ dv.currentlyselected.name);
 			 }
 	}
 		
@@ -52,4 +53,7 @@ public class GetVenue implements ActionListener{
 	
 
 }
+		
 	
+	
+

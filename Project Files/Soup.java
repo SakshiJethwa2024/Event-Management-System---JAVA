@@ -1,3 +1,6 @@
+package food;
+import food.HashMapFile;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -41,8 +44,8 @@ public class Soup extends JPanel
 		sl = new SoupListener(this);
 		s6 = new Soup2();
 		this.setLayout(null);
-		this.setBackground(new Color(207,236,207));
-		//this.setBackground(Color.white);
+		//this.setBackground(new Color(255,102,102,20));
+		this.setBackground(new Color(255,255,204));
 		//this.setExtendedState(MAXIMIZED_BOTH);
 		this.setBounds(10,10,900,700);
 		//this.setResizable(false);
@@ -51,44 +54,42 @@ public class Soup extends JPanel
 		f = new Font("Arial Rounded MT Bold",Font.PLAIN,20);
 
 		c1 = new JCheckBox(""+s6.s1.name+"                                                                "+s6.s1.price);
-		c1.setBounds(110,100,700,30);
+		c1.setBounds(200,200,700,30);
 		c1.setFocusable(false);
 		c1.setFont(f);
 		this.add(c1);
 		
 		c2 = new JCheckBox(""+s6.s2.name+"                                                                   "+s6.s2.price);
-		c2.setBounds(110,150,700,30);
+		c2.setBounds(200,250,900,30);
 		c2.setFocusable(false);
 		c2.setFont(f);
 		this.add(c2);
 		
 		c3 = new JCheckBox(""+s6.s3.name+"                                                             "+s6.s3.price);
-		c3.setBounds(110,200,700,30);
+		c3.setBounds(200,300,900,30);
 		c3.setFocusable(false);
 		c3.setFont(f);
 		this.add(c3);
 		
 		c4 = new JCheckBox(""+s6.s4.name+"                                                            "+s6.s4.price);
-		c4.setBounds(110,250,700,30);
+		c4.setBounds(200,350,900,30);
 		c4.setFocusable(false);
 		c4.setFont(f);
 		this.add(c4);
 		
 		c5 = new JCheckBox(""+s6.s5.name+"                                           "+s6.s5.price);
-		c5.setBounds(110,300,700,30);
+		c5.setBounds(200,400,900,30);
 		c5.setFocusable(false);
 		c5.setFont(f);
 		this.add(c5);
 		
 		l = new JLabel("CHOOSE YOUR SOUPS HERE!!");
-		l.setBounds(290,20,900,30);
+		l.setBounds(300,100,900,30);
 		l.setFont(f);
 		this.add(l);
 		
 		book = new JButton("CONFIRM");
-		book.setBounds(380,350,150,40);
-		book.setBackground(Color.white);
-		book.setForeground(Color.black);
+		book.setBounds(600,500,150,40);
 		book.setFont(f);
 		book.setFocusable(false);
 		this.add(book);
@@ -151,10 +152,6 @@ class SoupListener implements ActionListener
 //				System.out.println(HashMapFile.item);
 				s.book.setEnabled(false);
 			}
-		}
-		else if(amount == 0)
-		{
-			JOptionPane.showMessageDialog(null,"PLEASE SELECT AT LEAST ONE SOUP TO ADD IN THE FOOD LIST","Error",JOptionPane.ERROR_MESSAGE);
 		}
 		
 		

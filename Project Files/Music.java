@@ -1,3 +1,5 @@
+package music1;
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -32,11 +34,11 @@ public class Music extends JPanel implements ActionListener {
         this.setVisible(false);
         selectButton1 = createButton();
         selectButton1.setText("Select");
-        selectButton1.setBounds(830,10,100,30);
+        selectButton1.setBounds(850,120,100,30);
 
         reviewButton1 = createButton();
         reviewButton1.setText("Review");
-        reviewButton1.setBounds(700,10,100,30);
+        reviewButton1.setBounds(700,120,100,30);
 
         JLabel label_01 = new JLabel("FUNCTION AND PARTY BAND");
         label_01.setBounds(10,10,980,20);
@@ -52,7 +54,7 @@ public class Music extends JPanel implements ActionListener {
         label_04.setFont(font3);
 
         JPanel panel_01 = createPanel();
-        panel_01.setBounds(15,10,950,120);
+        panel_01.setBounds(15,10,980,170);
         panel_01.add(label_01);
         panel_01.add(label_02);
         panel_01.add(label_03);
@@ -75,14 +77,14 @@ public class Music extends JPanel implements ActionListener {
 
         selectButton2 = createButton();
         selectButton2.setText("Select");
-        selectButton2.setBounds(830,10,100,30);
+        selectButton2.setBounds(850,120,100,30);
 
         reviewButton2 = createButton();
         reviewButton2.setText("Review");
-        reviewButton2.setBounds(700,10,100,30);
+        reviewButton2.setBounds(700,120,100,30);
 
         JPanel panel_02 = createPanel();
-        panel_02.setBounds(15,140,950,120);
+        panel_02.setBounds(15,190,980,170);
         panel_02.add(label21);
         panel_02.add(label22);
         panel_02.add(label23);
@@ -100,20 +102,20 @@ public class Music extends JPanel implements ActionListener {
         JLabel label33 = new JLabel("Rating : * * * * *");
         label33.setBounds(10,60,980,20);
         label33.setFont(font3);
-        JLabel label34 = new JLabel("Details : This band is suitable for parties,opening events,college events !!");
+        JLabel label34 = new JLabel("Details : This band is suitable for parties,opening events,collage events !!");
         label34.setBounds(10,85,980,40);
         label34.setFont(font3);
 
         selectButton3 = createButton();
         selectButton3.setText("Select");
-        selectButton3.setBounds(830,10,100,30);
+        selectButton3.setBounds(850,120,100,30);
 
         reviewButton3 = createButton();
         reviewButton3.setText("Review");
-        reviewButton3.setBounds(700,10,100,30);
+        reviewButton3.setBounds(700,120,100,30);
 
         JPanel panel_03 = createPanel();
-        panel_03.setBounds(15,270,950,120);
+        panel_03.setBounds(15,370,980,170);
         panel_03.add(label31);
         panel_03.add(label32);
         panel_03.add(label33);
@@ -131,20 +133,20 @@ public class Music extends JPanel implements ActionListener {
         JLabel label43 = new JLabel("Rating : * * * * *");
         label43.setBounds(10,60,980,20);
         label43.setFont(font3);
-        JLabel label44 = new JLabel("Details : This band is suitable specially for parties,college events,rocking event !!");
+        JLabel label44 = new JLabel("Details : This band is suitable specially for parties,collage events,rocking event ");
         label44.setBounds(10,85,980,20);
         label44.setFont(font3);
 
         selectButton4 = createButton();
         selectButton4.setText("Select");
-        selectButton4.setBounds(830,10,100,30);
+        selectButton4.setBounds(1000,120,100,30);
 
         reviewButton4 = createButton();
         reviewButton4.setText("Review");
-        reviewButton4.setBounds(700,10,100,30);
+        reviewButton4.setBounds(800,120,100,30);
 
         JPanel panel_04 = createPanel();
-        panel_04.setBounds(15,400,950,120);
+        panel_04.setBounds(15,550,980,170);
         panel_04.add(label41);
         panel_04.add(label42);
         panel_04.add(label43);
@@ -187,7 +189,8 @@ public class Music extends JPanel implements ActionListener {
         }
 
         if(e.getSource()== reviewButton1 || e.getSource()== reviewButton2 || e.getSource()== reviewButton3 ||e.getSource()== reviewButton4){
-            JOptionPane.showMessageDialog(null,"This band is really good for event like parties and wedding or any children party.I want to rate this band 4.5 out of 5 Thank you","Customer Review",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"This band is really good for event like parties and wedding or any children party.
+             I want to rate this band 4.5 out of 5 Thank you","Customer Review",JOptionPane.INFORMATION_MESSAGE);
         }
     }
     public JButton createButton(){
@@ -206,10 +209,14 @@ public class Music extends JPanel implements ActionListener {
         JPanel panel = new JPanel();
        // panel.setBackground(creamColor);
        // panel.setBackground(Color.white);
-       panel.setBackground(new Color(253,222,238));
+       panel.setBackground(new Color(255,102,102,20));
         panel.setLayout(null);
         panel.setBorder(BorderFactory.createLineBorder(Color.black, 1));
        // panel.setVisible(true);
         return panel;
     }
 }
+
+
+
+

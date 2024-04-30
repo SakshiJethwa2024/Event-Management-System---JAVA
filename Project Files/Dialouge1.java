@@ -1,3 +1,4 @@
+package venue;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Frame;
@@ -60,3 +61,5 @@ public class Dialouge1 extends JDialog {
 		}
 
 }
+
+

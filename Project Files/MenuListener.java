@@ -1,3 +1,4 @@
+package mainfront;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -41,18 +42,9 @@ public class MenuListener implements ActionListener {
 			tp.ftp.setVisible(true);
 			temp=tp.ftp;
 		}
-		else if(e.getActionCommand().equals("DECORATION")) {
-			if(temp!=null) {
-				temp.setVisible(false);
-			}
-			tp.decor.setVisible(true);
-			temp=tp.decor;
-		}
 		else if(e.getActionCommand().equals("next")) {
 			tp.dispose();
-			//PrintBooking pb=new PrintBooking("tt");
-			Final fp = new Final("THE VELVET MOMENTS -- FINAL BOOKING",tp.user,tp.date);
-			fp.setVisible(true);
+			PrintBooking pb=new PrintBooking("tt");
 		}
 		
 	}

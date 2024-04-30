@@ -1,3 +1,5 @@
+package food;
+
 public class SilverPlate {
 	String sabji1,sabji2,rice,farsan,sweet;
 	double cost=220;
@@ -9,7 +11,6 @@ public class SilverPlate {
 		sweet=s;
 	}
 	public String toString() {
-		return "You have selected Silver Plate..cost Rs "+cost+"\nYOUR SELECTED PLATE : \nSABJI : "+sabji1+","+sabji2+"\nFARSAN : "+farsan+"\nSWEET : "+sweet+
-		"\nRICE : "+rice+"\nroti,papad";
+		return "You have selected Silver Plate..cost Rs "+cost+"\nYOUR SELECTED PLATE : \nSABJI : "+sabji1+","+sabji2+"\nFARSAN : "+farsan+"\nSWEET : "+sweet+"\nRICE : "+rice+"\nroti,papad";
 	}
 }

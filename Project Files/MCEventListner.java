@@ -1,9 +1,11 @@
+package food;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 import javax.swing.JOptionPane;
+import food.HashMapFile;
 public class MCEventListner implements ActionListener,ItemListener {
 	FrontEndforMainCourse mc;
 	MCEventListner(FrontEndforMainCourse mc){
@@ -62,15 +64,12 @@ public class MCEventListner implements ActionListener,ItemListener {
 		if(e.getActionCommand().equals("Confirm")) {
 			p=0;
 			if(mc.platinum.isSelected()) {
-				 pl=new PlatinumPlate(mc.pss1.getSelectedItem().toString(),mc.pss2.getSelectedItem().toString(),
-				 mc.pf.getSelectedItem().toString(),mc.ps1.getSelectedItem().toString(),mc.ps2.getSelectedItem().toString(),
-				 mc.pr.getSelectedItem().toString());
+				 pl=new PlatinumPlate(mc.pss1.getSelectedItem().toString(),mc.pss2.getSelectedItem().toString(),mc.pf.getSelectedItem().toString(),mc.ps1.getSelectedItem().toString(),mc.ps2.getSelectedItem().toString(),mc.pr.getSelectedItem().toString());
 				 HashMapFile.item.put(pl.toString(),pl.cost);
 			}
 			else if(mc.silver.isSelected()) {
 				p=1;
-				 sl=new SilverPlate(mc.ss1.getSelectedItem().toString(),mc.ss2.getSelectedItem().toString(),
-				 mc.sr.getSelectedItem().toString(),mc.sf.getSelectedItem().toString(),mc.ss.getSelectedItem().toString());
+				 sl=new SilverPlate(mc.ss1.getSelectedItem().toString(),mc.ss2.getSelectedItem().toString(),mc.sr.getSelectedItem().toString(),mc.sf.getSelectedItem().toString(),mc.ss.getSelectedItem().toString());
 				HashMapFile.item.put(sl.toString(),sl.cost);;
 			}
 			

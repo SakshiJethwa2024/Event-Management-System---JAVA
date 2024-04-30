@@ -1,3 +1,6 @@
+package food;
+import food.HashMapFile;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -54,67 +57,65 @@ class Extras extends JPanel
 		//this.setResizable(false);
 		//this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setBounds(10,10,900,700);
-		this.setBackground(new Color(207,236,207));
+		this.setBackground(new Color(255,255,204));
 		
 		f = new Font("Arial Rounded MT Bold",Font.PLAIN,20);
 		
 		c1 = new JCheckBox(""+e9.e1.name+"                                                                "+e9.e1.price);
-		c1.setBounds(140,70,700,30);
+		c1.setBounds(200,150,900,30);
 		c1.setFocusable(false);
 		c1.setFont(f);
 		this.add(c1);
 		
 		c2 = new JCheckBox(""+e9.e2.name+"                                                               "+e9.e2.price);
-		c2.setBounds(140,110,700,30);
+		c2.setBounds(200,190,900,30);
 		c2.setFocusable(false);
 		c2.setFont(f);
 		this.add(c2);
 		
 		c3 = new JCheckBox(""+e9.e3.name+"                                                                        "+e9.e3.price);
-		c3.setBounds(140,150,700,30);
+		c3.setBounds(200,230,900,30);
 		c3.setFocusable(false);
 		c3.setFont(f);
 		this.add(c3);
 		
 		c4 = new JCheckBox(""+e9.e4.name+"                                                                      "+e9.e4.price);
-		c4.setBounds(140,190,700,30);
+		c4.setBounds(200,270,900,30);
 		c4.setFocusable(false);
 		c4.setFont(f);
 		this.add(c4);
 		
 		c5 = new JCheckBox(""+e9.e5.name+"                                                                 "+e9.e5.price);
-		c5.setBounds(140,230,700,30);
+		c5.setBounds(200,310,900,30);
 		c5.setFocusable(false);
 		c5.setFont(f);
 		this.add(c5);
 		
 		c6 = new JCheckBox(""+e9.e6.name+"                                                                     "+e9.e6.price);
-		c6.setBounds(140,270,700,30);
+		c6.setBounds(200,350,900,30);
 		c6.setFocusable(false);
 		c6.setFont(f);
 		this.add(c6);
 		
 		c7 = new JCheckBox(""+e9.e7.name+"                                                            "+e9.e7.price);
-		c7.setBounds(140,310,700,30);
+		c7.setBounds(200,390,900,30);
 		c7.setFocusable(false);
 		c7.setFont(f);
 		this.add(c7);
 		
 		c8 = new JCheckBox(""+e9.e8.name+"                                                          "+e9.e8.price);
-		c8.setBounds(140,350,700,30);
+		c8.setBounds(200,430,900,30);
 		c8.setFocusable(false);
 		c8.setFont(f);
 		this.add(c8);
 		
 		l = new JLabel("CHOOSE YOUR EXTRAS HERE!!");
-		l.setBounds(300,10,900,40);
+		l.setBounds(300,50,900,40);
 		l.setFont(f);
 		this.add(l);
 		
 		book = new JButton("CONFIRM");
-		book.setBounds(380,390,150,40);
-		book.setBackground(Color.white);
-		book.setForeground(Color.black);
+		book.setBounds(600,500,150,40);
 		book.setFont(f);
 		book.setFocusable(false);
 		this.add(book);
@@ -203,6 +204,5 @@ class ExtrasListener implements ActionListener
 	
 	}
 }
-
 
 

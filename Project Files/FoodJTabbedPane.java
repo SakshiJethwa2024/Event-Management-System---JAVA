@@ -1,3 +1,5 @@
+package food;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -26,11 +28,11 @@ public class FoodJTabbedPane extends JPanel {
             JLabel numberOfGuest = new JLabel("NUMBER OF GUESTS ",JLabel.CENTER);
             numberOfGuest.setFont(font2);
             numberOfGuest.setVerticalAlignment(JLabel.CENTER);
-            numberOfGuest.setBounds(50,10,300,30);
+            numberOfGuest.setBounds(50,20,300,30);
             
             numberTextField = new JTextField();
             numberTextField.setFont(font2);
-            numberTextField.setBounds(350,10,200,30);
+            numberTextField.setBounds(350,20,200,30);
             numberTextField.setText("0");
             numberTextField.setEditable(false);
             numberTextField.addMouseListener(new MouseAdapter() {
@@ -39,20 +41,18 @@ public class FoodJTabbedPane extends JPanel {
                         if(!numberTextField.getText().equals("")){
                             try{
                                 if(Double.parseDouble(numberTextField.getText()) < 0){
-                                    JOptionPane.showMessageDialog(null,"ENTER ONLY POSITIVE INTEGER VALUE ","Warning massage",
-                                    JOptionPane.WARNING_MESSAGE);
+                                    JOptionPane.showMessageDialog(null,"ENTER ONLY POSITIVE INTEGER VALUE ","Warning massage",JOptionPane.WARNING_MESSAGE);
                                 }
                             }
                             catch (Exception ex){
-                                JOptionPane.showMessageDialog(null,"ENTER ONLY INTEGER VALUE : " + ex,"Exception massage",
-                                JOptionPane.ERROR_MESSAGE);
+                                JOptionPane.showMessageDialog(null,"ENTER ONLY INTEGER VALUE : " + ex,"Exception massage",JOptionPane.ERROR_MESSAGE);
                             }
                         }
                 }
             });
 
             finalBookingButton = new JButton("BOOK");
-            finalBookingButton.setBounds(600,10,150,30);
+            finalBookingButton.setBounds(600,20,150,30);
             finalBookingButton.setFont(font2);
             finalBookingButton.setBackground(Color.WHITE);
             finalBookingButton.setFocusable(false);
@@ -65,12 +65,11 @@ public class FoodJTabbedPane extends JPanel {
                         if(choice == 0){
                             HashMapFile.numberOfGuest = Integer.parseInt(numberTextField.getText());
                             JOptionPane.showMessageDialog(null,"YOU ENTERED NUMBER OF GUESTS : " + HashMapFile.numberOfGuest + "\n\n" + HashMapFile.getFoodList() + "\nYOU HAVE TO PAY TOTAL " + HashMapFile.getTotalPrice() +"/- RUPEES","Final Booking",JOptionPane.INFORMATION_MESSAGE);
-                             fc=new FoodChoice("YOU ENTERED NUMBER OF GUESTS : " + HashMapFile.numberOfGuest + "\n\n" + HashMapFile.getFoodList(),HashMapFile.getTotalPrice());
+                             fc=new FoodChoice(HashMapFile.getTotalPrice());
                         }
                     }
                     else{
-                        JOptionPane.showMessageDialog(null,"YOUR FOOD LIST IS EMPTY OR ENTER VALID NUMBER OF GUESTS TO GET DONE YOUR BOOKING",
-                        "Error",JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null,"YOUR FOOD LIST IS EMPTY OR ENTER VALID NUMBER OF GUESTS TO GET DONE YOUR BOOKING","Error",JOptionPane.ERROR_MESSAGE);
                     }
                 }
             });
@@ -86,13 +85,13 @@ public class FoodJTabbedPane extends JPanel {
 //        create the tabbed pane
             JTabbedPane tabbedPane = new JTabbedPane();
             //tabbedPane.setPreferredSize(new Dimension(1000,600));
-            tabbedPane.setBounds(0,50,940,460);
+            tabbedPane.setBounds(0,60,950,600);
 
-            tabbedPane.addTab("SOUPS",new Soup());
-            tabbedPane.addTab("STARTERS",new StartersLabel());
-            tabbedPane.addTab("MAINCOURSE",new FrontEndforMainCourse());
-            tabbedPane.addTab("EXTRAS",new Extras());
-            tabbedPane.addTab("DESSERTS",new Desserts3());
+            tabbedPane.addTab("soup",new Soup());
+           tabbedPane.addTab("starters",new StartersLabel());
+            tabbedPane.addTab("maincourse",new FrontEndforMainCourse());
+            tabbedPane.addTab("Extras",new Extras());
+            tabbedPane.addTab("Desserts",new Desserts3());
 
             tabbedPane.setBackground(Color.WHITE);
             

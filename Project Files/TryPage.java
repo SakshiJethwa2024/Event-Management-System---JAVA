@@ -1,4 +1,9 @@
+package mainfront;
 import java.awt.BorderLayout;
+import venue.*;
+import food.*;
+import music1.Music;
+import photographyp.Photography1;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -15,10 +20,10 @@ import javax.swing.JTextArea;
 import javax.swing.border.Border;
 
 
-
+import venue.VenueFrame;
 
 public class TryPage extends JFrame{
-	JPanel top,left,MyProfile,right,heading;
+	JPanel top,left,MyProfile,right;
 	JButton venue,food,decoration,music,photography;
 	Font f;
 	static TryPage z;
@@ -26,15 +31,11 @@ public class TryPage extends JFrame{
 	Photography1 p1;
 	Music m1;
 	FoodJTabbedPane ftp;
-	DecorTab decor;
 	JButton next;
-	String user,date;
 	//JScrollPane sp;
-	public TryPage(String s,String user,String date){
+	public TryPage(String s){
 		super(s);
 		z=this;
-		this.user = user;
-		this.date = date;
 		this.setLayout(null);
 		//this.pack();
 		
@@ -45,18 +46,11 @@ public class TryPage extends JFrame{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setContentPane(new JLabel(new ImageIcon("src//pic1.jpeg")));
 		
-		
-		    heading = new JPanel();
-	        heading.setBounds(0,0,1400,140);
-	        add(heading);
-	        JLabel pic = new JLabel(new ImageIcon("images//tvm3re3.png"));
-			heading.add(pic);
-		
 		left=new JPanel();
 		//left.setBackground(new Color(102,0,153));
 		//left.setBackground(new Color(255,204,51));
 		
-		left.setBounds(0, 140, 250, 700);
+		left.setBounds(0, 150, 290, 700);
 		this.add(left);
 		left.setLayout(null);
 		
@@ -70,20 +64,20 @@ public class TryPage extends JFrame{
 		venue=new JButton("VENUE");
 		
 		addButtons(left,venue);
-		venue.setBounds(20,20,200,70);
+		venue.setBounds(40,120,200,70);
 		
 		food=new JButton("FOOD");
 		addButtons(left,food);
-		food.setBounds(20,120,200,70);
+		food.setBounds(40,200,200,70);
 		music=new JButton("MUSIC");
 		addButtons(left,music);
-		music.setBounds(20,220,200,70);
+		music.setBounds(40,280,200,70);
 		decoration=new JButton("DECORATION");
 		addButtons(left,decoration);
-		decoration.setBounds(20,320,200,70);
+		decoration.setBounds(40,360,200,70);
 		photography=new JButton("PHOTOS/VIDEOS");
 		addButtons(left,photography);
-		photography.setBounds(20,420,200,70);
+		photography.setBounds(40,440,200,70);
 		
 		MenuListener ml=new MenuListener(this);
 		venue.addActionListener(ml);
@@ -101,9 +95,7 @@ public class TryPage extends JFrame{
 		//this.getContentPane().add(vf.sp);
 		
 		next=new JButton("next");
-		next.setBounds(1150,100,100,40);
-		next.setBackground(Color.white);
-		next.setForeground(Color.black);
+		next.setBounds(1200,700,200,50);
 		this.add(next);
 		next.addActionListener(ml);
 		 vf=new VenueFrame();
@@ -114,8 +106,6 @@ public class TryPage extends JFrame{
 		 this.add(m1);
 		 ftp=new FoodJTabbedPane();
 		 this.add(ftp);
-		 decor = new DecorTab();
-		 this.add(decor);
 		
 	}
 	public void addButtons(JPanel left,JButton b) {
@@ -135,4 +125,5 @@ public class TryPage extends JFrame{
 	}
 	
 }
+
 

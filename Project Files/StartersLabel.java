@@ -1,3 +1,6 @@
+package food;
+import food.HashMapFile;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -16,7 +19,7 @@ public class StartersLabel extends JLabel implements ActionListener {
         //Image img = backGroundImage.getImage();
         //Image temp_img = img.getScaledInstance(1000,700,Image.SCALE_SMOOTH);
         //backGroundImage = new ImageIcon(temp_img);
-    	this.setBackground(new Color(207,236,207));
+    	this.setBackground(new Color(255,255,204));
         setText("");
        // setIcon(backGroundImage);
         setAlignmentX(JLabel.CENTER);
@@ -24,26 +27,20 @@ public class StartersLabel extends JLabel implements ActionListener {
         JLabel heading = new JLabel("CHOOSE YOUR STARTERS",JLabel.CENTER);
         heading.setFont(font2);
         heading.setBounds(0,0,900,100);
-        heading.setBackground(new Color(207,236,207));
+        heading.setBackground(new Color(255,255,204));
 
-//        JPanel starter = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        JPanel starter = new JPanel();
-        starter.setLayout(null);
-        starter.setBounds(0,100,940,300);
+        JPanel starter = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        starter.setBounds(0,100,900,300);
         //starter.setBackground(new Color(0,0,0,0));
-        starter.setBackground(new Color(207,236,207));
+        starter.setBackground(new Color(255,255,204));
         starter.setOpaque(true);
         checkBoxes[0] = createCheckBox("Hara Bhara Kabab ", 100);
-        checkBoxes[0].setBounds(110,20,700,40);
         starter.add(checkBoxes[0],CENTER);
         checkBoxes[1] = createCheckBox("Paneer Chilly Dry " , 200);
-        checkBoxes[1].setBounds(110,70,700,40);
         starter.add(checkBoxes[1]);
         checkBoxes[2] = createCheckBox("Barbeque " , 130);
-        checkBoxes[2].setBounds(110,120,700,40);
         starter.add(checkBoxes[2]);
         checkBoxes[3] = createCheckBox("Cheese Balls " , 130);
-        checkBoxes[3].setBounds(110,170,700,40);
         starter.add(checkBoxes[3]);
 
         bookButton = new JButton("CONFIRM");
@@ -51,7 +48,7 @@ public class StartersLabel extends JLabel implements ActionListener {
         bookButton.setFocusable(false);
         bookButton.setBorder(BorderFactory.createRaisedSoftBevelBorder());
         bookButton.setBackground(Color.WHITE);
-        bookButton.setBounds(260,240,150,30);
+        bookButton.setBounds(300,400,150,30);
         bookButton.addActionListener(this);
 
         cancelButton = new JButton("CLEAR");
@@ -59,7 +56,7 @@ public class StartersLabel extends JLabel implements ActionListener {
         cancelButton.setFocusable(false);
         cancelButton.setBorder(BorderFactory.createRaisedSoftBevelBorder());
         cancelButton.setBackground(Color.WHITE);
-        cancelButton.setBounds(460,240,150,30);
+        cancelButton.setBounds(500,400,150,30);
         cancelButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -69,8 +66,8 @@ public class StartersLabel extends JLabel implements ActionListener {
             }
         });
 
-        starter.add(bookButton);
-        starter.add(cancelButton);
+        add(bookButton);
+        add(cancelButton);
         add(heading);
         add(starter,JLabel.CENTER);
     }
@@ -115,7 +112,7 @@ public class StartersLabel extends JLabel implements ActionListener {
             if(isSelectedAny(checkBoxes)){
                 int chioce = JOptionPane.showConfirmDialog(null,"ARE YOU SURE TO CONFIRM THESE STARTERS?\nONCE YOU SELECT YES YOU CANNOT EDIT THE STARTERS!!","Confirm Decision",JOptionPane.YES_NO_OPTION);
                 if(chioce == 0){
-                    JOptionPane.showMessageDialog(null,"YOUR SELECTED STARTERS \n" + selectedStartersList() + "\nARE SUCCESSFULLY ADDED TO THE FOOD LIST!!\nTHE COAST IS PER PLATE" ,"Confirmation Massage",JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"YOUR SELECTED STARTERS \n" + selectedStartersList() + "\n ARE SUCCESSFULLY ADDED TO THE FOOD LIST!!\nTHE COAST IS PER PLATE" ,"Confirmation Massage",JOptionPane.INFORMATION_MESSAGE);
 //                    System.out.println(HashMapFile.item);
                     bookButton.setEnabled(false);
                     cancelButton.setEnabled(false);
@@ -128,4 +125,3 @@ public class StartersLabel extends JLabel implements ActionListener {
     }
 
 }
-

@@ -1,3 +1,4 @@
+package venue;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
@@ -18,9 +19,9 @@ public class DisplayVenue1 extends JFrame{
 	JButton book;
 	Venue currentlyselected;
 	DisplayVenue1(Venue v){
-	this.setBounds(300,50,800,650);
+	this.setBounds(300,100,800,650);
 	this.setVisible(true);
-	//this.setBackground(new Color(224,243,176,20));
+	//this.setBackground(new Color(255,102,102,20));
     this.setContentPane(new JLabel(new ImageIcon("src//pic1.jpeg")));
 	this.setLayout(null);
 	this.currentlyselected=v;
@@ -53,7 +54,8 @@ public class DisplayVenue1 extends JFrame{
 	details.setBounds(10,320,770,230);
 	//details.setBackground(new Color(0,0,0,10));
 	details.setFont(new Font("Berlin Sans FB",Font.PLAIN,20));
-	details.setText("\nAddress/Location : "+v.location+"\nDetails : "+v.extrainfo+"\n\nPRICE : 		    Distinguish Features : \nhalf day : "+v.pricehalfday+"	    	* "+v.df1+"\nfull day : "+v.pricefullday+"	    	* "+v.df2);
+	details.setText("\nAddress/Location : "+v.location+"\nDetails : "+v.extrainfo+"\n\nPRICE : 		
+	    Distinguish Features : \nhalf day : "+v.pricehalfday+"	    	* "+v.df1+"\nfull day : "+v.pricefullday+"	    	* "+v.df2);
 	this.add(details);
 	details.setEditable(false);
 	
@@ -73,4 +75,3 @@ public class DisplayVenue1 extends JFrame{
 	
 	
 }
-

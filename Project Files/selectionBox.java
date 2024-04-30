@@ -1,3 +1,4 @@
+package music1;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -49,7 +50,8 @@ public class selectionBox extends JFrame implements ActionListener{
        // durationLabel.setForeground(creamColor);
         durationLabel.setBounds(20,150,100,30);
 
-        String[] option = {"Select Duration","2 Hours","4 Hours","6 Hours","8 Hours","10 Hours","HalfDay","14 Hours","16 Hours","18 Hours","20 Hours","22 Hours","Full Day"};
+        String[] option = {"Select Duration","2 Hours","4 Hours","6 Hours","8 Hours","10 Hours","HalfDay",
+        "14 Hours","16 Hours","18 Hours","20 Hours","22 Hours","Full Day"};
         duration = new JComboBox(option);
         duration.setSelectedIndex(0);
         duration.setFocusable(false);
@@ -80,12 +82,16 @@ public class selectionBox extends JFrame implements ActionListener{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == bookButton){
-                    int chioce = JOptionPane.showConfirmDialog(null,"Are you sure to book this band because once you booked the band you cannot cancel the booking","Confirm Decision",JOptionPane.YES_NO_CANCEL_OPTION);
+                    int chioce = JOptionPane.showConfirmDialog(null,"Are you sure to book this band because once you booked
+                     the band you cannot cancel the booking",
+                    "Confirm Decision",JOptionPane.YES_NO_CANCEL_OPTION);
                     if(chioce == 0){
                         if(!totalPriceTextField.getText().equals("0")){
-                        	 bm=new BookMusic(str,Double.parseDouble(totalPriceTextField.getText()));
+                        	 bm=new BookMusic(str,totalPriceTextField.getText());
                         	 dispose();
-                            JOptionPane.showMessageDialog(null,"Your Booking for " + str + " has successfully done!!" ,"Booking Successful",JOptionPane.INFORMATION_MESSAGE);
+                            JOptionPane.showMessageDialog(null,"Your Booking for " + str + " has successfully done!!"
+                            ,"Booking Successful",JOptionPane.INFORMATION_MESSAGE);
+                           
                            
                         }
                         else{
@@ -141,4 +147,3 @@ public class selectionBox extends JFrame implements ActionListener{
         return button;
     }
 }
-

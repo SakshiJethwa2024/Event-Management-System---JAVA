@@ -1,12 +1,15 @@
+package music1;
+
+import mainfront.BookingDetails;
+
 public class BookMusic {
 	public	String name;
-	public double price;
-public	BookMusic(String name,double price){
+	public String price;
+public	BookMusic(String name,String price){
 		this.name=name;
 		this.price=price;
-		//System.out.println(name+" "+price);
+		System.out.println(name+" "+price);
 		BookingDetails.musicadd(this);
 		
 	}
 }
-
