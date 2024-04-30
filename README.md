@@ -2,12 +2,12 @@
 
 Here it is the Java-GUI project developed with technologies : 
 
-# Core Java Concepts
-# OOPS
-# Java Swing 
-# Java AWT
-# JDBC
-# MySQL
+#Core Java Concepts
+#OOPS
+#Java Swing 
+#Java AWT
+#JDBC
+#MySQL
 
 This project handles the management of the events getting booked online with their requirements specified, generating their final bill for all the booked services.
 
